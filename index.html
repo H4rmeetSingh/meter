@@ -24,18 +24,9 @@
       margin: 0;
       color: #333;
     }
-    h1 {
-      font-size: 26px;
-    }
-    h2 {
-      margin-bottom: 25px;
-      font-size: 20px;
-    }
-    label {
-      font-weight: 600;
-      margin-top: 15px;
-      display: block;
-    }
+    h1 { font-size: 26px; }
+    h2 { margin-bottom: 25px; font-size: 20px; }
+    label { font-weight: 600; margin-top: 15px; display: block; }
     input, select, textarea {
       width: 100%;
       padding: 8px;
@@ -67,9 +58,7 @@
       margin-top: 20px;
       cursor: pointer;
     }
-    button:hover {
-      background-color: #0056b3;
-    }
+    button:hover { background-color: #0056b3; }
     footer {
       font-size: 12px;
       color: #777;
@@ -107,118 +96,113 @@
 <body>
 
 <form action="https://script.google.com/macros/s/AKfycbzGFwPrA0Fs8Xdi7ecJNo9tHhoBuPq3VMBncU4npNMLU-i_gjYUov-JOkpA5bHhALXK/exec" method="POST" onsubmit="return validateForm(event)">
+  <h1>GENUS</h1>
+  <h2>OLD Meter Dismantle</h2>
 
-    <h1>GENUS</h1>
-    <h2>OLD Meter Dismantle</h2>
+  <label>Name:</label>
+  <input type="text" name="Name" required>
 
-    <label>Name:</label>
-    <input type="text" name="name" required>
+  <label>Date:</label>
+  <input type="date" name="Date" required>
 
-    <label>Date:</label>
-    <input type="date" name="date" required>
+  <label>Sub Division:</label>
+  <select name="Sub Division" required>
+    <option value="">Select Sub Division</option>
+    <option>AKHNOOR</option>
+    <option>BADERWAH</option>
+    <option>BANIHAL</option>
+    <option>BARI BRAHMANA</option>
+    <option>BASOLI</option>
+    <option>BATOTE</option>
+    <option>BHALESSA</option>
+    <option>BILAWAR</option>
+    <option>BISHNAH</option>
+    <option>CANAL</option>
+    <option>CHENANI</option>
+    <option>CHATROO</option>
+    <option>DODA</option>
+    <option>DHARMARI</option>
+    <option>GANDHI NAGAR</option>
+    <option>HIRA NAGAR</option>
+    <option>JANIPUR</option>
+    <option>JOURIAN</option>
+    <option>KATHUA</option>
+    <option>KATRA</option>
+    <option>KISHTWAR</option>
+    <option>KOTRANKA</option>
+    <option>MANDI</option>
+    <option>MENDAR</option>
+    <option>MIRAN SAHIB</option>
+    <option>NAGROTA</option>
+    <option>NOWSHERA</option>
+    <option>PARADE-I</option>
+    <option>PARADE-II</option>
+    <option>PARADE-III</option>
+    <option>POONCH</option>
+    <option>POUNI</option>
+    <option>PUL DODA</option>
+    <option>RAJOURI-I</option>
+    <option>RAJOURI-II</option>
+    <option>RAMGARH</option>
+    <option>RAMKOTE</option>
+    <option>RAMBAN</option>
+    <option>RAM NAGAR</option>
+    <option>REASI</option>
+    <option>SAMBA</option>
+    <option>SHASTRI NAGAR</option>
+    <option>SUNDERBANI</option>
+    <option>SURANKOTE</option>
+    <option>THATRI</option>
+    <option>UDHAMPUR-I</option>
+    <option>UDHAMPUR-II</option>
+    <option>VIJAYPUR</option>
+  </select>
 
-    <label>Sub Division:</label>
-    <select name="sub_division" required>
-      <option value="">Select Sub Division</option>
-      <option>AKHNOOR</option>
-      <option>BADERWAH</option>
-      <option>BANIHAL</option>
-      <option>BARI BRAHMANA</option>
-      <option>BASOLI</option>
-      <option>BATOTE</option>
-      <option>BHALESSA</option>
-      <option>BILAWAR</option>
-      <option>BISHNAH</option>
-      <option>CANAL</option>
-      <option>CHENANI</option>
-      <option>CHATROO</option>
-      <option>DODA</option>
-      <option>DHARMARI</option>
-      <option>GANDHI NAGAR</option>
-      <option>HIRA NAGAR</option>
-      <option>JANIPUR</option>
-      <option>JOURIAN</option>
-      <option>KATHUA</option>
-      <option>KATRA</option>
-      <option>KISHTWAR</option>
-      <option>KOTRANKA</option>
-      <option>MANDI</option>
-      <option>MENDAR</option>
-      <option>MIRAN SAHIB</option>
-      <option>NAGROTA</option>
-      <option>NOWSHERA</option>
-      <option>PARADE-I</option>
-      <option>PARADE-II</option>
-      <option>PARADE-III</option>
-      <option>POONCH</option>
-      <option>POUNI</option>
-      <option>PUL DODA</option>
-      <option>RAJOURI-I</option>
-      <option>RAJOURI-II</option>
-      <option>RAMGARH</option>
-      <option>RAMKOTE</option>
-      <option>RAMBAN</option>
-      <option>RAM NAGAR</option>
-      <option>REASI</option>
-      <option>SAMBA</option>
-      <option>SHASTRI NAGAR</option>
-      <option>SUNDERBANI</option>
-      <option>SURANKOTE</option>
-      <option>THATRI</option>
-      <option>UDHAMPUR-I</option>
-      <option>UDHAMPUR-II</option>
-      <option>VIJAYPUR</option>
-    </select>
+  <input type="hidden" name="Timestamp" id="timestamp">
 
-    <input type="hidden" name="timestamp" id="timestamp">
+  <div id="questions"></div>
 
-    <!-- QUESTION GENERATOR -->
-    <script>
-      const questions = [
-        "Old Meter Dismantle",
-        "Old meter submitted to JPDCL store",
-        "Sealing certificate filled per consumer",
-        "Signed by REC",
-        "Signed by JPDCL Meter Reader",
-        "Signed by JPDCL JE",
-        "Signed by JPDCL AEE"
-      ];
-    </script>
-
-    <div id="questions"></div>
-
-    <script>
-      const container = document.getElementById("questions");
-      questions.forEach((question, index) => {
-        const section = document.createElement("div");
-        section.innerHTML = `
-          <label>${index + 1}. ${question}</label>
-          <div class="row-2col">
-            <div><span class="sub-label">WC</span>
-              <input type="number" name="${question} WC" maxlength="3" oninput="this.value=this.value.slice(0,3)" />
-            </div>
-            <div><span class="sub-label">DT</span>
-              <input type="number" name="${question} DT" maxlength="3" oninput="this.value=this.value.slice(0,3)" />
-            </div>
-            <div><span class="sub-label">LTCT</span>
-              <input type="number" name="${question} LTCT" maxlength="3" oninput="this.value=this.value.slice(0,3)" />
-            </div>
-            <div><span class="sub-label">HTCT</span>
-              <input type="number" name="${question} HTCT" maxlength="3" oninput="this.value=this.value.slice(0,3)" />
-            </div>
+  <script>
+    const questions = [
+      "Old Meter Dismantle",
+      "Old meter submitted to JPDCL store",
+      "Sealing certificate filled per consumer",
+      "Signed by REC",
+      "Signed by JPDCL Meter Reader",
+      "Signed by JPDCL JE",
+      "Signed by JPDCL AEE"
+    ];
+    const container = document.getElementById("questions");
+    questions.forEach((question, index) => {
+      const section = document.createElement("div");
+      section.innerHTML = `
+        <label>${index + 1}. ${question}</label>
+        <div class="row-2col">
+          <div><span class="sub-label">WC</span>
+            <input type="number" name="${question} WC" maxlength="3" oninput="this.value=this.value.slice(0,3)" />
           </div>
-        `;
-        container.appendChild(section);
-      });
-    </script>
+          <div><span class="sub-label">DT</span>
+            <input type="number" name="${question} DT" maxlength="3" oninput="this.value=this.value.slice(0,3)" />
+          </div>
+          <div><span class="sub-label">LTCT</span>
+            <input type="number" name="${question} LTCT" maxlength="3" oninput="this.value=this.value.slice(0,3)" />
+          </div>
+          <div><span class="sub-label">HTCT</span>
+            <input type="number" name="${question} HTCT" maxlength="3" oninput="this.value=this.value.slice(0,3)" />
+          </div>
+        </div>
+      `;
+      container.appendChild(section);
+    });
+  </script>
 
-    <label>Remarks:</label>
-    <textarea name="remarks" rows="3" placeholder="Write remarks here..."></textarea>
+  <label>Remarks:</label>
+  <textarea name="Remarks" rows="3" placeholder="Write remarks here..."></textarea>
 
-    <button type="submit">Submit</button>
-    <div id="confirmation">✅ Your response has been submitted!</div>
+  <button type="submit">Submit</button>
+  <div id="confirmation">✅ Your response has been submitted!</div>
 
-    <footer>Created by Harmeet Singh</footer>
-  </form>
+  <footer>Created by Harmeet Singh</footer>
+</form>
 </body>
 </html>
