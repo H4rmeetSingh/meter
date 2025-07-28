@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OLD Meter Dismantle</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    form {
+      background: #fff;
+      max-width: 700px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      text-align: center;
+      margin: 0;
+      color: #333;
+    }
+    h1 {
+      font-size: 26px;
+    }
+    h2 {
+      margin-bottom: 25px;
+      font-size: 20px;
+    }
+    label {
+      font-weight: 600;
+      margin-top: 15px;
+      display: block;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+    .row-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .sub-label {
+      font-weight: normal;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 16px;
+      width: 100%;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    footer {
+      font-size: 12px;
+      color: #777;
+      margin-top: 20px;
+      text-align: left;
+    }
+    #confirmation {
+      color: green;
+      text-align: center;
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+  <script>
+    function setTimestamp() {
+      document.getElementById("timestamp").value = new Date().toLocaleString();
+    }
+
+    function validateForm(e) {
+      let name = document.forms[0]["name"].value;
+      let date = document.forms[0]["date"].value;
+      let sub = document.forms[0]["sub_division"].value;
+      if (!name || !date || !sub) {
+        alert("Please fill Name, Date, and Sub Division");
+        e.preventDefault();
+        return false;
+      }
+      document.getElementById("confirmation").style.display = "block";
+      return true;
+    }
+
+    window.onload = setTimestamp;
+  </script>
+</head>
+<body>
+
+<form action="https://script.google.com/macros/s/AKfycbw82mJZAlEQXalNKadEE-OP1L_0oP6NuFXR5O26TN8/dev" method="POST" onsubmit="return validateForm(event)">
+
+    <h1>GENUS</h1>
+    <h2>OLD Meter Dismantle</h2>
+
+    <label>Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Date:</label>
+    <input type="date" name="date" required>
+
+    <label>Sub Division:</label>
+    <select name="sub_division" required>
+      <option value="">Select Sub Division</option>
+      <option>AKHNOOR</option>
+      <option>BADERWAH</option>
+      <option>BANIHAL</option>
+      <option>BARI BRAHMANA</option>
+      <option>BASOLI</option>
+      <option>BATOTE</option>
+      <option>BHALESSA</option>
+      <option>BILAWAR</option>
+      <option>BISHNAH</option>
+      <option>CANAL</option>
+      <option>CHENANI</option>
+      <option>CHATROO</option>
+      <option>DODA</option>
+      <option>DHARMARI</option>
+      <option>GANDHI NAGAR</option>
+      <option>HIRA NAGAR</option>
+      <option>JANIPUR</option>
+      <option>JOURIAN</option>
+      <option>KATHUA</option>
+      <option>KATRA</option>
+      <option>KISHTWAR</option>
+      <option>KOTRANKA</option>
+      <option>MANDI</option>
+      <option>MENDAR</option>
+      <option>MIRAN SAHIB</option>
+      <option>NAGROTA</option>
+      <option>NOWSHERA</option>
+      <option>PARADE-I</option>
+      <option>PARADE-II</option>
+      <option>PARADE-III</option>
+      <option>POONCH</option>
+      <option>POUNI</option>
+      <option>PUL DODA</option>
+      <option>RAJOURI-I</option>
+      <option>RAJOURI-II</option>
+      <option>RAMGARH</option>
+      <option>RAMKOTE</option>
+      <option>RAMBAN</option>
+      <option>RAM NAGAR</option>
+      <option>REASI</option>
+      <option>SAMBA</option>
+      <option>SHASTRI NAGAR</option>
+      <option>SUNDERBANI</option>
+      <option>SURANKOTE</option>
+      <option>THATRI</option>
+      <option>UDHAMPUR-I</option>
+      <option>UDHAMPUR-II</option>
+      <option>VIJAYPUR</option>
+    </select>
+
+    <input type="hidden" name="timestamp" id="timestamp">
+
+    <!-- QUESTION GENERATOR -->
+    <script>
+      const questions = [
+        "Old Meter Dismantle",
+        "Old meter submitted to JPDCL store",
+        "Sealing certificate filled per consumer",
+        "Signed by REC",
+        "Signed by JPDCL Meter Reader",
+        "Signed by JPDCL JE",
+        "Signed by JPDCL AEE"
+      ];
+    </script>
+
+    <div id="questions"></div>
+
+    <script>
+      const container = document.getElementById("questions");
+      questions.forEach((question, index) => {
+        const section = document.createElement("div");
+        section.innerHTML = `
+          <label>${index + 1}. ${question}</label>
+          <div class="row-2col">
+            <div><span class="sub-label">WC</span>
+              <input type="number" name="${question} WC" maxlength="3" oninput="this.value=this.value.slice(0,3)" />
+            </div>
+            <div><span class="sub-label">DT</span>
+              <input type="number" name="${question} DT" maxlength="3" oninput="this.value=this.value.slice(0,3)" />
+            </div>
+            <div><span class="sub-label">LTCT</span>
+              <input type="number" name="${question} LTCT" maxlength="3" oninput="this.value=this.value.slice(0,3)" />
+            </div>
+            <div><span class="sub-label">HTCT</span>
+              <input type="number" name="${question} HTCT" maxlength="3" oninput="this.value=this.value.slice(0,3)" />
+            </div>
+          </div>
+        `;
+        container.appendChild(section);
+      });
+    </script>
+
+    <label>Remarks:</label>
+    <textarea name="remarks" rows="3" placeholder="Write remarks here..."></textarea>
+
+    <button type="submit">Submit</button>
+    <div id="confirmation">✅ Your response has been submitted!</div>
+
+    <footer>Created by Harmeet Singh</footer>
+  </form>
+</body>
+</html>
