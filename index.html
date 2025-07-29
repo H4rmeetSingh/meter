@@ -78,9 +78,10 @@
     }
 
     function validateForm(e) {
-      let name = document.forms[0]["name"].value;
-      let date = document.forms[0]["date"].value;
-      let sub = document.forms[0]["sub_division"].value;
+     let name = document.forms[0]["Name"].value;
+     let date = document.forms[0]["Date"].value;
+     let sub = document.forms[0]["Sub Division"].value;
+
       if (!name || !date || !sub) {
         alert("Please fill Name, Date, and Sub Division");
         e.preventDefault();
