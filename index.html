@@ -78,10 +78,9 @@
     }
 
     function validateForm(e) {
-     let name = document.forms[0]["Name"].value;
-     let date = document.forms[0]["Date"].value;
-     let sub = document.forms[0]["Sub Division"].value;
-
+      let name = document.forms[0]["name"].value;
+      let date = document.forms[0]["date"].value;
+      let sub = document.forms[0]["sub_division"].value;
       if (!name || !date || !sub) {
         alert("Please fill Name, Date, and Sub Division");
         e.preventDefault();
@@ -101,13 +100,13 @@
   <h2>OLD Meter Dismantle</h2>
 
   <label>Name:</label>
-  <input type="text" name="Name" required>
+  <input type="text" name="name" required>
 
   <label>Date:</label>
-  <input type="date" name="Date" required>
+  <input type="date" name="date" required>
 
   <label>Sub Division:</label>
-  <select name="Sub Division" required>
+  <select name="sub_division" required>
     <option value="">Select Sub Division</option>
     <option>AKHNOOR</option>
     <option>BADERWAH</option>
@@ -159,7 +158,7 @@
     <option>VIJAYPUR</option>
   </select>
 
-  <input type="hidden" name="Timestamp" id="timestamp">
+  <input type="hidden" name="timestamp" id="timestamp">
 
   <div id="questions"></div>
 
@@ -198,7 +197,7 @@
   </script>
 
   <label>Remarks:</label>
-  <textarea name="Remarks" rows="3" placeholder="Write remarks here..."></textarea>
+  <textarea name="remarks" rows="3" placeholder="Write remarks here..."></textarea>
 
   <button type="submit">Submit</button>
   <div id="confirmation">✅ Your response has been submitted!</div>
